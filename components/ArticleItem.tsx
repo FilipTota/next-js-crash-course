@@ -6,6 +6,7 @@ interface Article {
   id: number;
   title: string;
   body: string;
+  excerpt: string;
 }
 
 interface ArticleItemProps {
@@ -20,7 +21,7 @@ const ArticleItem = ({ article }: ArticleItemProps) => {
       className={articleStyles.card}
     >
       <h3>{article.title} &rarr;</h3>
-      <p>{article.body}</p>
+      <p>{article.excerpt}</p>
     </Link>
   );
 };

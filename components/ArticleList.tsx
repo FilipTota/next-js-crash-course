@@ -1,6 +1,7 @@
 import React from "react";
 import articleStyles from "./Article.module.css";
 import ArticleItem from "./ArticleItem";
+import { server } from "../config";
 
 interface Article {
   id: number;
@@ -9,9 +10,7 @@ interface Article {
 }
 
 const ArticleList = async () => {
-  const res = await fetch(
-    "https://jsonplaceholder.typicode.com/posts?_limit=6"
-  );
+  const res = await fetch(`${server}/api/articles`);
   const articles: Article[] = await res.json();
 
   return (
